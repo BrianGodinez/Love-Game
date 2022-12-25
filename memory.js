@@ -42,8 +42,20 @@ function shuffle(array) {
   }
 }
 
-// Create the game board
-function createBoard() {
+const startButton = document.getElementById("start-button");
+
+// Define the start game function
+function startGame() {
+  // Clear the game board and reset the score
+  gameBoard.innerHTML = "";
+  score = 0;
+  scoreDiv.innerHTML = `Score: ${score}`;
+  // Create the game board
+  createBoard();
+}
+
+// Add a click event listener to the start button
+startButton.addEventListener("click", startGame);
   // Duplicate the pairs to create a full set of cards
   const fullSet = pairs.concat(pairs);
   // Shuffle the full set of cards
